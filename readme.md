@@ -8,3 +8,32 @@
 6. Private post can be seen by the user only.
 7. Protected post can be seen by all logged in users.
 8. Public post can be seen by everyone.
+
+## Plan & Structure
+
+Model:
+    ->User(Mongoose Model of User)
+           ->FirstName
+           ->LastName
+           ->Email
+           ->Password
+    ->Post
+           ->Mongoose Model of Post
+
+Controller
+    ->UserController
+        ->Register
+        ->UserLogin
+    ->PostController
+        ->GetPost
+        ->GetPostByUserID
+        ->CreatePost
+
+//Routes will call the Controller based upon the endpoint. You will decide which method/controller to call.
+
+Routes
+    ->UserRoutes
+    ->PostRoutes
+
+Auth
+    ->This folder will handle User Authentication.
