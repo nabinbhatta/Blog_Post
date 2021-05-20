@@ -1,0 +1,21 @@
+const User = require('../models/user');
+
+module.exports.createAccount =  (req, res) => {
+
+    console.log(req.body)
+    aUser = new User({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: req.body.password
+    });
+
+    aUser.save().then(user => {
+        console.log(user+ 'Hi')
+        res.send(user);
+    }).catch(error => {
+        res.send(error);
+    })
+
+    
+}

@@ -17,8 +17,11 @@ Model:
            ->LastName
            ->Email
            ->Password
-    ->Post
-           ->Mongoose Model of Post
+    ->Post(Mongoose Model of Post)
+           ->Title
+           ->Content
+           ->Type(Visibility)
+           ->PostedBy(User)
 
 Controller
     ->UserController
