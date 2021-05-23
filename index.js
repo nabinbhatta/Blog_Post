@@ -1,20 +1,22 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const userRoute = require('./routes/userRoutes');
+const postRoute = require('./routes/postRoutes');
 
 const app = express();
 
-app.use(express.json());
+app.use(express.json()); //parse json in postman
 
 app.use('/user', userRoute);
+app.use('/post', postRoute);
 
 app.get('/', (req,res,next) => {
     res.send('Hello World!!!');
 }) ;
 
-let dbUser = 'yourUsername'
-let dbPassword = 'yourPassword'
-let dbURL = 'yourDBURL'
+let dbUser = 'xyz'
+let dbPassword = 'xyz'
+let dbURL = 'xyz'
 
 mongoose.connect(`mongodb+srv://${dbUser}:${dbPassword}@${dbURL}/myFirstDatabase?retryWrites=true&w=majority`)
 .then(database=> {

@@ -28,9 +28,10 @@ Controller
         ->Register
         ->UserLogin
     ->PostController
+        ->CreatePost
         ->GetPost
         ->GetPostByUserID
-        ->CreatePost
+        
 
 //Routes will call the Controller based upon the endpoint. You will decide which method/controller to call.
 

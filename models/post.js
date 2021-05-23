@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+// import mongoose from 'mongoose';
 
 const PostSchema = new mongoose.Schema ({
 
@@ -12,7 +13,7 @@ const PostSchema = new mongoose.Schema ({
         required: true
     },
 
-    type: {
+    visibility: {
         type: String,
         required: true
     },
@@ -21,6 +22,10 @@ const PostSchema = new mongoose.Schema ({
         type: String,
         required: true
     }
+
+    // postedBy: {
+    //     type: mongoose.Schema.Types.ObjectId, ref: 'User'
+    // }
 })
 
 module.exports = mongoose.model('Post', PostSchema)
